@@ -31,6 +31,22 @@ function pararCronometro(setInterval){
     clearInterval(setInterval);
 }
 
+function mapearImagenYPosicionesAleatorias(){
+    const conjuntoDePosicionesAleatorias = generarConjuntoConPosicionesAleatorias();
+    let dicImagenPosiciones = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};
+    let numeroDeImagen = 1;
+    let indiceDeConjuntoAleatorio=0;
+
+    for (let posicionAleatoria of conjuntoDePosicionesAleatorias){
+        dicImagenPosiciones[numeroDeImagen].push(posicionAleatoria);
+        indiceDeConjuntoAleatorio++; // son 16 imagenes, necesito cada foto 1-8 con una lista de dos valores
+        if(indiceDeConjuntoAleatorio%2 === 0){
+            numeroDeImagen++
+        }
+    }
+    return dicImagenPosiciones;
+}
+
 function generarConjuntoConPosicionesAleatorias(){
     const cantidadDePosiciones = 16;
     let conjuntoPosicionesAleatorias = new Set();
