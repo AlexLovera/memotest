@@ -1,0 +1,25 @@
+{
+  "name": "memotest",
+  "version": "1.0.0",
+  "description": "Juego memotest",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexLovera/memotest.git"
+  },
+  "author": "Alex lovera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexLovera/memotest/issues"
+  },
+  "homepage": "https://github.com/AlexLovera/memotest#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-alpha1"
+  }
+}
