@@ -30,3 +30,16 @@ function iniciarCronometro(){
 function pararCronometro(setInterval){
     clearInterval(setInterval);
 }
+
+function generarConjuntoConPosicionesAleatorias(){
+    const cantidadDePosiciones = 16;
+    let conjuntoPosicionesAleatorias = new Set();
+    let posicionAleatoria = 0;
+
+    while(conjuntoPosicionesAleatorias.size < 16){
+        posicionAleatoria = Math.ceil(Math.random() * (cantidadDePosiciones));
+        conjuntoPosicionesAleatorias.add(posicionAleatoria);
+    }
+
+    return conjuntoPosicionesAleatorias;
+}
