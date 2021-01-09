@@ -3,6 +3,15 @@ const $tiempoJugado=document.querySelector('#tiempo');
 const $botonDeInicio = document.querySelector('#botonDeInicio');
 let intervaloTiempo;
 
+
+$botonDeInicio.addEventListener('click',()=>{
+    if(intervaloTiempo !== undefined){
+        pararCronometro(intervaloTiempo);
+    }
+    iniciarCronometro();
+    // poner las tarjetas random
+    // mostrar las tarjetas dadas vuelta
+});
 //para parar setInterval hay que usar el valor retornado por esta, usandolo como mparametro de clearInterval()
 function iniciarCronometro(){
     let segundos=0;
