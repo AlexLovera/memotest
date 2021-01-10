@@ -41,6 +41,14 @@ function iniciarJuego(){
 function pararCronometro(setInterval) {
     clearInterval(setInterval);
 }
+// CAMBIAR NOMBRE
+function ponerTarjetasConSignoDeInterrogacion(){
+    console.log('entra');
+    $divsTarjetas.forEach(($tarjeta)=>{
+        $tarjeta.classList.remove('oculto');
+        volverTarjetaAlEstadoInicial($tarjeta);
+    });
+}
 
 function insertarImagenesAleatoriasATarjetas(){
     const mapImagenPos = mapearImagenYPosicionesAleatorias();
