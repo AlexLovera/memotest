@@ -89,7 +89,7 @@ function ponerTarjetasConSignoDeInterrogacion(){
     console.log('entra');
     $divsTarjetas.forEach(($tarjeta)=>{
         $tarjeta.classList.remove('oculto');
-        volverTarjetaAlEstadoInicial($tarjeta);
+        cambiarImagenDeTarjetaASignoInterrogacion($tarjeta);
     });
 }
 
