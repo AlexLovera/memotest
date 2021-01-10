@@ -1,8 +1,9 @@
 const $tiempoJugado=document.querySelector('#tiempo');
 //maximo 1 hora de juego, es decir si son 60 minutos, se termina el juego
 const $botonDeInicio = document.querySelector('#botonDeInicio');
+const $divsTarjetas = document.querySelectorAll('.tarjeta');
 let intervaloTiempo;
-
+insertarImagenesAleatoriasATarjetas();
 
 $botonDeInicio.addEventListener('click',()=>{
     if(intervaloTiempo !== undefined){
@@ -29,6 +30,16 @@ function iniciarCronometro(){
 
 function pararCronometro(setInterval){
     clearInterval(setInterval);
+}
+
+function insertarImagenesAleatoriasATarjetas(){
+    const mapImagenPos = mapearImagenYPosicionesAleatorias();
+    for(let numeroDeImagen = 1; numeroDeImagen<=8; numeroDeImagen++){
+        mapImagenPos[numeroDeImagen].forEach((posicion)=>{
+            const $imgConFruta = $divsTarjetas[posicion].querySelector('.imgFruta');
+            $imgConFruta.src = `img/${numeroDeImagen}.jpg`;
+        });
+    }
 }
 
 function mapearImagenYPosicionesAleatorias(){
