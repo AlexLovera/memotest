@@ -53,7 +53,8 @@ function generarConjuntoConPosicionesAleatorias(){
     let posicionAleatoria = 0;
 
     while(conjuntoPosicionesAleatorias.size < 16){
-        posicionAleatoria = Math.ceil(Math.random() * (cantidadDePosiciones));
+        // se necesita que sea floor para no tener que restar -1 en los indices del array de divs
+        posicionAleatoria = Math.floor(Math.random() * (cantidadDePosiciones));
         conjuntoPosicionesAleatorias.add(posicionAleatoria);
     }
 
