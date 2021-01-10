@@ -6,3 +6,7 @@
 #barraTiempoYBotonInicio{
     margin-bottom: 10px;
 }
+
+.oculto{
+    display: none;
+}
