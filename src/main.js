@@ -9,10 +9,10 @@ let intervaloTiempo;
 insertarImagenesAleatoriasATarjetas();
 
 $botonDeInicio.addEventListener('click',()=>{
-    if(intervaloTiempo !== undefined){
-        pararCronometro(intervaloTiempo);
-    }
-    iniciarCronometro();
+    cantidadDeClicksActuales = 0;
+    paresDeTarjetasCompletadas = 0;
+    $tarjetaMostradaPreviamente=null;
+    iniciarJuego();
     // poner las tarjetas random
     // mostrar las tarjetas dadas vuelta
 });
