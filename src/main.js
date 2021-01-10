@@ -28,7 +28,17 @@ function iniciarCronometro(){
     },1000);
 }
 
-function pararCronometro(setInterval){
+function iniciarJuego(){
+    if (intervaloTiempo !== undefined) {
+        pararCronometro(intervaloTiempo);
+    }
+    insertarImagenesAleatoriasATarjetas();
+    ponerTarjetasConSignoDeInterrogacion();
+    agregarEventoALasTarjetas();
+    iniciarCronometro();
+}
+
+function pararCronometro(setInterval) {
     clearInterval(setInterval);
 }
 
