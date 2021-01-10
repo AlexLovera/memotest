@@ -60,6 +60,11 @@ function insertarImagenesAleatoriasATarjetas(){
     }
 }
 
+function cambiarImagenDeTarjetaAFruta($tarjetaRecibida){
+    $tarjetaRecibida.querySelector('.imgFruta').classList.remove('oculto');
+    $tarjetaRecibida.querySelector('.imgInterrogacion').classList.add('oculto');
+}
+
 function mapearImagenYPosicionesAleatorias(){
     const conjuntoDePosicionesAleatorias = generarConjuntoConPosicionesAleatorias();
     let dicImagenPosiciones = {1:[],2:[],3:[],4:[],5:[],6:[],7:[],8:[]};
@@ -88,4 +93,9 @@ function generarConjuntoConPosicionesAleatorias(){
     }
 
     return conjuntoPosicionesAleatorias;
+}
+
+function cambiarImagenDeTarjetaASignoInterrogacion($tarjetaRecibida){
+    $tarjetaRecibida.querySelector('.imgFruta').classList.add('oculto');
+    $tarjetaRecibida.querySelector('.imgInterrogacion').classList.remove('oculto');
 }
