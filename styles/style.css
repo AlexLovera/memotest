@@ -10,3 +10,14 @@
 .oculto{
     display: none;
 }
+
+.imgInterrogacion{
+    height: 190px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.imgFruta{
+    height: 190px;
+    width: 300px;
+}
