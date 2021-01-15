@@ -1,3 +1,6 @@
+body{
+    background-color: #aee6e6;
+}
 .tarjeta{
     /*height: 40%;*/
     /*background-image: url("../img/signo interrogacion.jpg");*/
@@ -20,6 +23,12 @@ h1{
     width: 300px;
     cursor: pointer;
 }
+
+.imgInterrogacion:hover{
+    /*border-color: #b1dfbb;*/
+    border-color: #ffa45b;
+}
+
 
 .imgFruta{
     height: 190px;
