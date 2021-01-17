@@ -19,8 +19,8 @@ h1{
 }
 
 .imgInterrogacion{
-    height: 190px;
-    width: 300px;
+    height: 11em;
+    width: 20em;
     cursor: pointer;
 }
 
@@ -31,6 +31,6 @@ h1{
 
 
 .imgFruta{
-    height: 190px;
-    width: 300px;
+    height: 11em;
+    width: 20em;
 }
