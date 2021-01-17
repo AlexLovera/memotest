@@ -67,7 +67,11 @@ function iniciarCronometro(){
             minutos++;
             segundos=0;
         }
-        $tiempoJugado.textContent = `${minutos}:${segundos}`;
+        if(segundos<10){
+            $tiempoJugado.textContent = `${minutos}:0${segundos}`;
+        } else {
+            $tiempoJugado.textContent = `${minutos}:${segundos}`;
+        }
     },1000);
 }
 
