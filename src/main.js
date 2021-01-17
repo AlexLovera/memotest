@@ -7,15 +7,11 @@ let paresDeTarjetasCompletadas = 0;
 let $tarjetaPrevia = null;
 let esPrimeraCargaDelJuego = true;
 let intervaloTiempo;
-insertarImagenesAleatoriasATarjetas();
+// insertarImagenesAleatoriasATarjetas();
 
 $botonDeInicio.addEventListener('click',()=>{
-    cantidadDeClicksActuales = 0;
-    paresDeTarjetasCompletadas = 0;
-    $tarjetaMostradaPreviamente=null;
     iniciarJuego();
     ocultarMensajeParaGanador();
-    // poner las tarjetas random
     // mostrar las tarjetas dadas vuelta
 });
 
@@ -92,6 +88,8 @@ function terminoElJuego(){
 }
 
 function iniciarJuego(){
+    // paresDeTarjetasCompletadas = 0;
+    // $tarjetaPrevia=null;
     if (intervaloTiempo !== undefined) {
         pararCronometro(intervaloTiempo);
     }
