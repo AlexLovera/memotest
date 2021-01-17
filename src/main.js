@@ -85,6 +85,11 @@ function iniciarCronometro(){
     },1000);
 }
 
+function terminoElJuego(){
+    paresDeTarjetasCompletadas++;
+    return paresDeTarjetasCompletadas===8;
+}
+
 function iniciarJuego(){
     if (intervaloTiempo !== undefined) {
         pararCronometro(intervaloTiempo);
