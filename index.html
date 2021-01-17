@@ -7,18 +7,20 @@
     <title>Memotest</title>
 </head>
 <body>
-
-<div class="container" id="barraTiempoYBotonInicio">
-    <div class="row">
-        <div class="col">
-            <p>Tiempo jugado: <strong id="tiempo">0</strong></p>
-        </div>
-        <div class="col">
-            <button id="botonDeInicio" type="button" class="btn btn-primary">Jugar!</button>
+<header>
+    <div class="container" id="barraTiempoYBotonInicio">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                    <p>Tiempo jugado: <strong id="tiempo">0:00</strong></p>
+                </div>
+            </div>
+            <div class="col">
+                <button id="botonDeInicio" type="button" class="btn btn-primary">Jugar!</button>
+            </div>
         </div>
     </div>
-</div>
-
+</header>
 <div class="container">
     <div class="row row-cols-4" id="tablero">
         <div class="col tarjeta">
