@@ -29,8 +29,7 @@ function agregarEventoALasTarjetas() {
                     // pasar a una funcion que sea lasTarjetasTienenLasMismasImagenes
                     if ($imagenPrimerTarjeta.src === $imagenSegundaTarjeta.src) { // div tarjeta a oculto
                         setTimeout(() => {
-                            $tarjetaPrevia.classList.add('invisible');
-                            $tarjeta.classList.add('invisible');
+                            hacerParTarjetasInvisibles($tarjetaPrevia,$tarjeta)
                             $tarjetaPrevia = null;
                         }, 150);
                         if(terminoElJuego()){
@@ -110,6 +109,11 @@ function ponerTarjetasConSignoDeInterrogacion(){
         $tarjeta.classList.remove('oculto');
         cambiarImagenDeTarjetaASignoInterrogacion($tarjeta);
     });
+}
+
+function hacerParTarjetasInvisibles(tarjeta1,tarjeta2){
+    tarjeta1.classList.add('invisible');
+    tarjeta2.classList.add('invisible');
 }
 
 function insertarImagenesAleatoriasATarjetas(){
