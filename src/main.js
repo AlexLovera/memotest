@@ -5,7 +5,6 @@ const $botonDeInicio = document.querySelector('#botonDeInicio');
 const $divsTarjetas = document.querySelectorAll('.tarjeta');
 let paresDeTarjetasCompletadas = 0;
 let $tarjetaPrevia = null;
-let esPrimeraCargaDelJuego = true;
 let intervaloTiempo;
 
 $botonDeInicio.addEventListener('click',()=>{
@@ -95,6 +94,7 @@ function iniciarJuego(){
     }
     insertarImagenesAleatoriasATarjetas();
     ponerTarjetasConSignoDeInterrogacion();
+    const esPrimeraCargaDelJuego = !seDebeReiniciar;
     if(esPrimeraCargaDelJuego){
         agregarEventoALasTarjetas();
     }
