@@ -1,4 +1,5 @@
-const $tiempoJugado=document.querySelector('#tiempo');
+const $tiempoJugado = document.querySelector('#tiempo');
+const $tablero = document.querySelector('#tablero');
 //maximo 1 hora de juego, es decir si son 60 minutos, se termina el juego
 const $botonDeInicio = document.querySelector('#botonDeInicio');
 const $divsTarjetas = document.querySelectorAll('.tarjeta');
