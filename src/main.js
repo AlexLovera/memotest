@@ -13,6 +13,7 @@ $botonDeInicio.addEventListener('click',()=>{
     paresDeTarjetasCompletadas = 0;
     $tarjetaMostradaPreviamente=null;
     iniciarJuego();
+    ocultarMensajeParaGanador();
     // poner las tarjetas random
     // mostrar las tarjetas dadas vuelta
 });
@@ -39,6 +40,7 @@ function agregarEventoALasTarjetas() {
                             $tarjetaPrevia = null;
                         }, 150);
                         if(terminoElJuego()){
+                            mostrarMensajeParaGanador();
                             pararCronometro(intervaloTiempo);
                         }
                     } else { // si no coinciden las tarjetas oculto imagenes y muestro imgInterrogacion
@@ -53,6 +55,18 @@ function agregarEventoALasTarjetas() {
         });
     });
 }
+
+function mostrarMensajeParaGanador(){
+    const $h1ParaGanador = document.querySelector('#mensajeParaGanador');
+    $h1ParaGanador.textContent = `Completaste el juego en ${$tiempoJugado.textContent}`;
+    $h1ParaGanador.classList.remove('oculto');
+}
+
+function ocultarMensajeParaGanador(){
+    const $h1ParaGanador = document.querySelector('#mensajeParaGanador');
+    $h1ParaGanador.classList.add('oculto');
+}
+
 //para parar setInterval hay que usar el valor retornado por esta, usandolo como mparametro de clearInterval()
 function iniciarCronometro(){
     let segundos=0;
