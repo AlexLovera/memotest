@@ -86,10 +86,12 @@ function terminoElJuego(){
 }
 
 function iniciarJuego(){
-    // paresDeTarjetasCompletadas = 0;
-    // $tarjetaPrevia=null;
-    if (intervaloTiempo !== undefined) {
+    const seDebeReiniciar = intervaloTiempo !== undefined//esto va arriba
+    if (seDebeReiniciar) {
         pararCronometro(intervaloTiempo);
+        paresDeTarjetasCompletadas = 0;
+        $tarjetaPrevia=null;
+        $tablero.classList.remove('oculto');
     }
     insertarImagenesAleatoriasATarjetas();
     ponerTarjetasConSignoDeInterrogacion();
