@@ -28,7 +28,6 @@ function agregarEventoALasTarjetas() {
                     // cambiarImagenDeTarjetaAFruta($tarjetaMostradaPreviamente);
                 } else {
                     // se toco la segunda carta, entonces compruebo
-                    cantidadDeClicksActuales = 0; // vuelve a 0
                     // cambiarImagenDeTarjetaAFruta($tarjeta);
                     const $imagenPrimerTarjeta = $tarjetaPrevia.querySelector('.imgFruta');
                     const $imagenSegundaTarjeta = $tarjeta.querySelector('.imgFruta');
