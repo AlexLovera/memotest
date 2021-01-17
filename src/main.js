@@ -4,7 +4,7 @@ const $botonDeInicio = document.querySelector('#botonDeInicio');
 const $divsTarjetas = document.querySelectorAll('.tarjeta');
 let cantidadDeClicksActuales = 0;
 let paresDeTarjetasCompletadas = 0;
-let $tarjetaMostradaPreviamente;
+let $tarjetaPrevia = null;
 let intervaloTiempo;
 insertarImagenesAleatoriasATarjetas();
 
@@ -20,36 +20,33 @@ $botonDeInicio.addEventListener('click',()=>{
 function agregarEventoALasTarjetas() {
     $divsTarjetas.forEach(($tarjeta) => {
         $tarjeta.addEventListener('click', () => {
-            if ($tarjetaMostradaPreviamente !== $tarjeta) { // compruebo que no sea la misma tarjeta
-                // cantidadDeClicksActuales++
+            if ($tarjetaPrevia !== $tarjeta) { // compruebo que no sea la misma tarjeta
                 cambiarImagenDeTarjetaAFruta($tarjeta);
-                if (++cantidadDeClicksActuales === 1) {
-                    $tarjetaMostradaPreviamente = $tarjeta;
+                if ($tarjetaPrevia === null) {
+                    $tarjetaPrevia = $tarjeta;
                     // cambiarImagenDeTarjetaAFruta($tarjetaMostradaPreviamente);
-                } else if (cantidadDeClicksActuales === 2) {
+                } else {
                     // se toco la segunda carta, entonces compruebo
                     cantidadDeClicksActuales = 0; // vuelve a 0
                     // cambiarImagenDeTarjetaAFruta($tarjeta);
-                    const $imagenPrimerTarjeta = $tarjetaMostradaPreviamente.querySelector('.imgFruta');
+                    const $imagenPrimerTarjeta = $tarjetaPrevia.querySelector('.imgFruta');
                     const $imagenSegundaTarjeta = $tarjeta.querySelector('.imgFruta');
                     // pasar a una funcion que sea lasTarjetasTienenLasMismasImagenes
                     if ($imagenPrimerTarjeta.src === $imagenSegundaTarjeta.src) { // div tarjeta a oculto
                         setTimeout(() => {
-                            $tarjetaMostradaPreviamente.classList.add('oculto');
+                            $tarjetaPrevia.classList.add('oculto');
                             $tarjeta.classList.add('oculto');
-                        }, 500);
-                        paresDeTarjetasCompletadas++;
-                        if(paresDeTarjetasCompletadas===8){
-                            const $h1ParaGanador = document.querySelector('#mensajeParaGanador');
-                            $h1ParaGanador.textContent = `Completaste el juego en ${$tiempoJugado.textContent}`;
-                            $h1ParaGanador.classList.remove('oculto');
+                            $tarjetaPrevia = null;
+                        }, 150);
+                        if(terminoElJuego()){
                             pararCronometro(intervaloTiempo);
                         }
                     } else { // si no coinciden las tarjetas oculto imagenes y muestro imgInterrogacion
                         setTimeout(() => {
                             cambiarImagenDeTarjetaASignoInterrogacion($tarjeta);
-                            cambiarImagenDeTarjetaASignoInterrogacion($tarjetaMostradaPreviamente);
-                        }, 250);
+                            cambiarImagenDeTarjetaASignoInterrogacion($tarjetaPrevia);
+                            $tarjetaPrevia = null;
+                        }, 150);
                     }
                 }
             }
