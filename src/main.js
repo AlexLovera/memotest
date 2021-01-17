@@ -35,8 +35,8 @@ function agregarEventoALasTarjetas() {
                     // pasar a una funcion que sea lasTarjetasTienenLasMismasImagenes
                     if ($imagenPrimerTarjeta.src === $imagenSegundaTarjeta.src) { // div tarjeta a oculto
                         setTimeout(() => {
-                            $tarjetaPrevia.classList.add('oculto');
-                            $tarjeta.classList.add('oculto');
+                            $tarjetaPrevia.classList.add('invisible');
+                            $tarjeta.classList.add('invisible');
                             $tarjetaPrevia = null;
                         }, 150);
                         if(terminoElJuego()){
