@@ -5,6 +5,7 @@ const $divsTarjetas = document.querySelectorAll('.tarjeta');
 let cantidadDeClicksActuales = 0;
 let paresDeTarjetasCompletadas = 0;
 let $tarjetaPrevia = null;
+let esPrimeraCargaDelJuego = true;
 let intervaloTiempo;
 insertarImagenesAleatoriasATarjetas();
 
@@ -96,7 +97,10 @@ function iniciarJuego(){
     }
     insertarImagenesAleatoriasATarjetas();
     ponerTarjetasConSignoDeInterrogacion();
-    agregarEventoALasTarjetas();
+    if(esPrimeraCargaDelJuego){
+        agregarEventoALasTarjetas();
+    }
+    esPrimeraCargaDelJuego=false;
     iniciarCronometro();
 }
 
