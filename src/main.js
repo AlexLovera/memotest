@@ -99,7 +99,6 @@ function iniciarJuego(){
     if(esPrimeraCargaDelJuego){
         agregarEventoALasTarjetas();
     }
-    esPrimeraCargaDelJuego=false;
     iniciarCronometro();
 }
 
