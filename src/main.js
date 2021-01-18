@@ -133,7 +133,7 @@ function insertarImagenesAleatoriasATarjetas(){
     for(let numeroDeImagen = 1; numeroDeImagen<=8; numeroDeImagen++){
         mapImagenPos[numeroDeImagen].forEach((posicion)=>{
             const $imgConFruta = $divsTarjetas[posicion].querySelector('.imgFruta');
-            $imgConFruta.src = `img/${numeroDeImagen}.jpg`;
+            $imgConFruta.src = `img/${numeroDeImagen}.png`;
         });
     }
 }
