@@ -1,3 +1,10 @@
+:root{
+    --color-principal: #232931;
+    --color-secundario: #393e46;
+    --color-y: #4ecca3;
+    --color-x: #eeeeee;
+}
+
 body{
     background-color: #aee6e6;
 }
