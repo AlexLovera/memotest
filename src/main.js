@@ -33,6 +33,7 @@ function agregarEventoALasTarjetas() {
                             $tarjetaPrevia = null;
                         }, 150);
                         if(terminoElJuego()){
+                            cambiarEstadoTablero(ocultar=true);
                             mostrarMensajeParaGanador();
                             pararCronometro(intervaloTiempo);
                         }
@@ -90,7 +91,7 @@ function iniciarJuego(){
         pararCronometro(intervaloTiempo);
         paresDeTarjetasCompletadas = 0;
         $tarjetaPrevia=null;
-        $tablero.classList.remove('oculto');
+        cambiarEstadoTablero(ocultar=false);
     }
     insertarImagenesAleatoriasATarjetas();
     ponerTarjetasConSignoDeInterrogacion();
@@ -102,6 +103,13 @@ function iniciarJuego(){
     iniciarCronometro();
 }
 
+function cambiarEstadoTablero(ocultar) {
+    if (ocultar) {
+        $tablero.classList.add('oculto');
+    } else {
+        $tablero.classList.remove('oculto');
+    }
+}
 function pararCronometro(setInterval) {
     clearInterval(setInterval);
 }
