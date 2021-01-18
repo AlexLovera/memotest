@@ -87,6 +87,8 @@ function terminoElJuego(){
 
 function iniciarJuego(){
     const seDebeReiniciar = intervaloTiempo !== undefined//esto va arriba
+    const esPrimeraCargaDelJuego = !seDebeReiniciar;
+
     if (seDebeReiniciar) {
         pararCronometro(intervaloTiempo);
         paresDeTarjetasCompletadas = 0;
@@ -95,7 +97,6 @@ function iniciarJuego(){
     }
     insertarImagenesAleatoriasATarjetas();
     ponerTarjetasConSignoDeInterrogacion();
-    const esPrimeraCargaDelJuego = !seDebeReiniciar;
     if(esPrimeraCargaDelJuego){
         agregarEventoALasTarjetas();
     }
